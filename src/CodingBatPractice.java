@@ -81,8 +81,37 @@ public class CodingBatPractice {
 
 //    Given 2 int values, return true if one is negative and one is positive. Except if the parameter "negative" is true, then return true only if both are negative.
 
-//    public boolean posNeg(int a, int b, boolean negative) {
+    public boolean posNeg(int a, int b, boolean negative) {
+        if (negative) {
+            return a < 0 && b < 0;
+        } else {
+            return (a > 0 && b < 0) || (a < 0 && b > 0);
+        }
+    }
+
+
+//    Given a string, return a new string where "not " has been added to the front. However, if the string already begins with "not", return the string unchanged. Note: use .equals() to compare 2 strings.
+
+    public String notString(String str) {
+        String firstThreeChars;
+
+        if (str.length() < 3) {
+            firstThreeChars = "";
+        } else {
+            firstThreeChars =  str.substring(0,3);
+        }
+
+        if (firstThreeChars.equals("not")) {
+            return str;
+        } else {
+            return "not " + str;
+        }
+    }
+
+
+//    Given a non-empty string and an int n, return a new string where the char at index n has been removed. The value of n will be a valid index of a char in the original string (i.e. n will be in the range 0..str.length()-1 inclusive).
+
+//    public String missingChar(String str, int n) {
 //
 //    }
-
 }
