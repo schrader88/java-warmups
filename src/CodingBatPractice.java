@@ -111,7 +111,54 @@ public class CodingBatPractice {
 
 //    Given a non-empty string and an int n, return a new string where the char at index n has been removed. The value of n will be a valid index of a char in the original string (i.e. n will be in the range 0..str.length()-1 inclusive).
 
-//    public String missingChar(String str, int n) {
+    public String missingChar(String str, int n) {
+        StringBuilder stringBuilder = new StringBuilder(str);
+        stringBuilder.deleteCharAt(n);
+        return stringBuilder.toString();
+    }
+
+
+//    Given a string, return a new string where the first and last chars have been exchanged.
+
+    public String frontBack(String str) {
+        if (str.length() < 2) {
+            return str;
+        }
+
+        char[] ch = str.toCharArray();
+
+        char temp = ch[0];
+        ch[0] = ch[ch.length - 1];
+        ch[ch.length - 1] = temp;
+
+        return String.valueOf(ch);
+    }
+
+//    Given a string, we'll say that the front is the first 3 chars of the string. If the string length is less than 3, the front is whatever is there. Return a new string which is 3 copies of the front.
+
+    public String front3(String str) {
+        if (str.length() < 3) {
+            return str + str + str;
+        } else {
+            char[] chars = str.toCharArray();
+            String newStr = "" + chars[0] + chars[1] + chars[2] + "";
+            return newStr + newStr + newStr;
+        }
+    }
+
+
+//    Given a string, take the last char and return a new string with the last char added at the front and back, so "cat" yields "tcatt". The original string will be length 1 or more.
+
+    public String backAround(String str) {
+        char[] chars = str.toCharArray();
+
+        return chars[chars.length - 1] + String.valueOf(chars) + chars[chars.length - 1];
+    }
+
+
+//    Return true if the given non-negative number is a multiple of 3 or a multiple of 5.
+
+//    public boolean or35(int n) {
 //
 //    }
 }
