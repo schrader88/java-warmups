@@ -210,7 +210,34 @@ public class CodingBatPractice {
 
 //    We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 2 int values, return true if one or the other is teen, but not both.
 
-//    public boolean loneTeen(int a, int b) {
+    public boolean loneTeen(int a, int b) {
+        if ((a >= 13 && a <= 19) && (b < 13 || b > 19)) {
+            return true;
+        } else return (b >= 13 && b <= 19) && (a < 13 || a > 19);
+    }
+
+
+//    Given a string, if the string "del" appears starting at index 1, return a string where that "del" has been deleted. Otherwise, return the string unchanged.
+
+    public String delDel(String str) {
+        if ((str.length() > 3) && (str.substring(1, 4).equals("del"))) {
+            return str.replace("del", "");
+        } else {
+            return str;
+        }
+    }
+
+
+//    Return true if the given string begins with "mix", except the 'm' can be anything, so "pix", "9ix" .. all count.
+
+    public boolean mixStart(String str) {
+        return (str.length() > 2) && (str.substring(1, 3).equals("ix"));
+    }
+
+
+//    Given a string, return a string made of the first 2 chars (if present), however include first char only if it is 'o' and include the second only if it is 'z', so "ozymandias" yields "oz".
+
+//    public String startOz(String str) {
 //
 //    }
 }
