@@ -237,7 +237,36 @@ public class CodingBatPractice {
 
 //    Given a string, return a string made of the first 2 chars (if present), however include first char only if it is 'o' and include the second only if it is 'z', so "ozymandias" yields "oz".
 
-//    public String startOz(String str) {
+    public String startOz(String str) {
+        if (str.startsWith("o")) {
+            if (str.length() > 1 && str.charAt(1) == 'z') {
+                return "oz";
+            } else {
+                return "o";
+            }
+        } else if (str.length() > 1 && str.charAt(1) == 'z') {
+            return "z";
+        } else {
+            return "";
+        }
+    }
+
+
+//    Given three int values, a b c, return the largest.
+
+    public int intMax(int a, int b, int c) {
+        if (a > b && a > c) {
+            return a;
+        } else if (b > a && b > c) {
+            return b;
+        } else {
+            return c;
+        }
+    }
+
+//    Given 2 int values, return whichever value is nearest to the value 10, or return 0 in the event of a tie. Note that Math.abs(n) returns the absolute value of a number.
+
+//    public int close10(int a, int b) {
 //
 //    }
 }
