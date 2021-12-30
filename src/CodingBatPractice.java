@@ -266,7 +266,22 @@ public class CodingBatPractice {
 
 //    Given 2 int values, return whichever value is nearest to the value 10, or return 0 in the event of a tie. Note that Math.abs(n) returns the absolute value of a number.
 
-//    public int close10(int a, int b) {
+    public int close10(int a, int b) {
+        int aDifference = Math.abs(a - 10);
+        int bDifference = Math.abs(b - 10);
+        if (aDifference > bDifference) {
+            return b;
+        } else if (bDifference > aDifference) {
+            return a;
+        } else {
+            return 0;
+        }
+    }
+
+
+//    Given 2 int values, return true if they are both in the range 30..40 inclusive, or they are both in the range 40..50 inclusive.
+
+//    public boolean in3050(int a, int b) {
 //
 //    }
 }
