@@ -281,7 +281,39 @@ public class CodingBatPractice {
 
 //    Given 2 int values, return true if they are both in the range 30..40 inclusive, or they are both in the range 40..50 inclusive.
 
-//    public boolean in3050(int a, int b) {
+    public boolean in3050(int a, int b) {
+        if ((a >= 30 && a <= 40) && (b >= 30 && b <= 40)) {
+            return true;
+        } else if ((a >= 40 && a <= 50) && (b >= 40 && b <= 50)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+//    Given 2 positive int values, return the larger value that is in the range 10..20 inclusive, or return 0 if neither is in that range.
+
+    public int max1020(int a, int b) {
+        if ((a >= 10 && a <= 20) && (b >= 10 && b <= 20)) {
+            if (a > b) {
+                return a;
+            } else if (a < b) {
+                return b;
+            }
+        } else if (a >= 10 && a <= 20) {
+            return a;
+        } else if (b >= 10 && b <= 20) {
+            return b;
+        }
+
+        return 0;
+    }
+
+
+//    Return true if the given string contains between 1 and 3 'e' chars.
+
+//    public boolean stringE(String str) {
 //
 //    }
 }
