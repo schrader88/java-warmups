@@ -313,7 +313,41 @@ public class CodingBatPractice {
 
 //    Return true if the given string contains between 1 and 3 'e' chars.
 
-//    public boolean stringE(String str) {
+    public boolean stringE(String str) {
+        char[] charArr = str.toCharArray();
+        int accumulator = 0;
+        for (char character : charArr) {
+            if (character == 'e') {
+                accumulator++;
+            }
+        }
+
+        return accumulator >= 1 && accumulator <= 3;
+    }
+
+
+//    Given two non-negative int values, return true if they have the same last digit, such as with 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 10 is 7.
+
+    public boolean lastDigit(int a, int b) {
+        int first = a % 10;
+        int second = b % 10;
+        return first == second;
+    }
+
+//    Given a string, return a new string where the last 3 chars are now in upper case. If the string has less than 3 chars, uppercase whatever is there. Note that str.toUpperCase() returns the uppercase version of a string.
+
+    public String endUp(String str) {
+        if (str.length() >= 3) {
+            return  str.substring(0, str.length() - 3) + str.substring(str.length() - 3).toUpperCase();
+        } else {
+            return str.toUpperCase();
+        }
+    }
+
+
+//    Given a non-empty string and an int N, return the string made starting with char 0, and then every Nth char of the string. So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more.
+
+//    public String everyNth(String str, int n) {
 //
 //    }
 }
