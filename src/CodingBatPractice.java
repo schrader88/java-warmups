@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class CodingBatPractice {
     public static void main(String[] args) {
 
@@ -347,7 +349,48 @@ public class CodingBatPractice {
 
 //    Given a non-empty string and an int N, return the string made starting with char 0, and then every Nth char of the string. So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more.
 
-//    public String everyNth(String str, int n) {
+    public String everyNth(String str, int n) {
+        char[] chars = str.toCharArray();
+        String newString = "";
+        for (int i = 0; i < chars.length; i += n) {
+            newString += chars[i];
+        }
+        return newString;
+    }
+
+
+//    Given a string and a non-negative int n, return a larger string that is n copies of the original string.
+
+    public String stringTimes(String str, int n) {
+        String outputString = "";
+        for (int i = 0; i < n; i++) {
+            outputString += str;
+        }
+        return outputString;
+    }
+
+//    Given a string and a non-negative int n, we'll say that the front of the string is the first 3 chars, or whatever is there if the string is less than length 3. Return n copies of the front;
+
+    public String frontTimes(String str, int n) {
+        if (str.length() <= 3) {
+            String outputThreeOrLess = "";
+                for (int i = 0; i < n; i++) {
+                    outputThreeOrLess += str;
+                }
+            return outputThreeOrLess;
+        } else {
+            String output = "";
+            for (int i = 0; i < n; i++) {
+                output += str.substring(0, 3);
+            }
+            return output;
+        }
+    }
+
+
+//    Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx" contains 2 "xx".
+
+//    int countXX(String str) {
 //
 //    }
 }
