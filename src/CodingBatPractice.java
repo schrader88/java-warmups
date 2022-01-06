@@ -390,7 +390,19 @@ public class CodingBatPractice {
 
 //    Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx" contains 2 "xx".
 
-//    int countXX(String str) {
-//
-//    }
+    int countXX(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length()-1; i++) {
+            if (str.substring(i, i+2).equals("xx")) {
+                count = count + 1;
+            }
+        }
+        return count;
+    }
+
+//    Given a string, return true if the first instance of "x" in the string is immediately followed by another "x".
+
+    boolean doubleX(String str) {
+
+    }
 }
