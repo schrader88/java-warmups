@@ -403,6 +403,43 @@ public class CodingBatPractice {
 //    Given a string, return true if the first instance of "x" in the string is immediately followed by another "x".
 
     boolean doubleX(String str) {
+        int indexOfX = str.indexOf("x");
 
+        if (indexOfX == -1) {
+            return false;
+        }
+
+        String twoX = str.substring(indexOfX);
+        return twoX.startsWith("xx");
     }
+
+
+//    Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+
+    public String stringBits(String str) {
+        String stringBuilder = "";
+        for (int i = 0; i < str.length(); i += 2) {
+            stringBuilder += str.charAt(i);
+        }
+        return stringBuilder;
+    }
+
+
+//    Given a non-empty string like "Code" return a string like "CCoCodCode".
+
+    public String stringSplosion(String str) {
+        String stringBuilder = "";
+        for (int i = 0; i <= str.length(); i++) {
+            stringBuilder += str.substring(0, i);
+        }
+        return stringBuilder;
+    }
+
+
+//    Given a string, return the count of the number of times that a substring length 2 appears in the string and also as the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count the end substring).
+
+//    public int last2(String str) {
+//
+//    }
+
 }
