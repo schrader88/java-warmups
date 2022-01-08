@@ -436,9 +436,43 @@ public class CodingBatPractice {
     }
 
 
-//    Given a string, return the count of the number of times that a substring length 2 appears in the string and also as the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count the end substring).
 
-//    public int last2(String str) {
+//    Given an array of ints, return the number of 9's in the array.
+
+    public int arrayCount9(int[] nums) {
+        int accumulator = 0;
+        for (int num : nums) {
+            if (num == 9) {
+                accumulator++;
+            }
+        }
+        return accumulator;
+    }
+
+
+//    Given an array of ints, return true if one of the first 4 elements in the array is a 9. The array length may be less than 4.
+
+    public boolean arrayFront9(int[] nums) {
+        if (nums.length > 4) {
+            for (int i = 0; i < 4; i++) {
+                if (nums[i] == 9) {
+                    return true;
+                }
+            }
+        } else {
+            for (int num : nums) {
+                if (num == 9) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+//    Given an array of ints, return true if the sequence of numbers 1, 2, 3 appears in the array somewhere.
+
+//    public boolean array123(int[] nums) {
 //
 //    }
 
