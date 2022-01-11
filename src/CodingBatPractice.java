@@ -472,7 +472,48 @@ public class CodingBatPractice {
 
 //    Given an array of ints, return true if the sequence of numbers 1, 2, 3 appears in the array somewhere.
 
-//    public boolean array123(int[] nums) {
+    public boolean array123(int[] nums) {
+        for (int i = 0; i < nums.length-2; i++) {
+            if (nums[i] == 1 && nums[i + 1] == 2 && nums[i + 2] == 3) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+//    IN PROGRESS IN PROGRESS IN PROGRESS IN PROGRESS IN PROGRESS IN PROGRESS IN PROGRESS IN PROGRESS IN PROGRESS
+
+//    Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring. So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
+
+//    public int stringMatch(String a, String b) {
+//
+//    }
+
+//    Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or end should not be removed.
+
+    public String stringX(String str) {
+        String stringBuilder = "";
+
+        for (int i = 0; i < str.length(); i++) {
+            if (!(i > 0 && i < (str.length() - 1) && str.substring(i, i + 1).equals("x"))) {
+                stringBuilder = stringBuilder + str.substring(i, i + 1);
+            }
+
+//            if (chars[i] == chars[0] || chars[i] == chars[chars.length - 1]) {
+//                stringBuilder = stringBuilder + chars[i];
+//            } else if (chars[i] != 'x') {
+//                stringBuilder = stringBuilder + chars[i];
+//            } else {
+//                stringBuilder += "";
+//            }
+        }
+        return stringBuilder;
+    }
+
+
+//    Given a string, return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens" yields "kien".
+
+//    public String altPairs(String str) {
 //
 //    }
 
