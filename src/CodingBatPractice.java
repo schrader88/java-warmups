@@ -513,8 +513,42 @@ public class CodingBatPractice {
 
 //    Given a string, return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens" yields "kien".
 
-//    public String altPairs(String str) {
-//
-//    }
+    public String altPairs(String str) {
+        String stringBuilder = "";
 
+        for (int i = 0; i < str.length(); i += 4) {
+            int last = i + 2;
+            if (last > str.length()) {
+                last = str.length();
+            }
+            stringBuilder = stringBuilder + str.substring(i, last);
+        }
+
+        return stringBuilder;
+    }
+
+
+//    Suppose the string "yak" is unlucky. Given a string, return a version where all the "yak" are removed, but the "a" can be any char. The "yak" strings will not overlap.
+
+    public String stringYak(String str) {
+        return str.replace("yak", "");
+    }
+
+
+//    Given an array of ints, return the number of times that two 6's are next to each other in the array. Also count instances where the second "6" is actually a 7.
+
+    public int array667(int[] nums) {
+        int accumulator = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 6) {
+                if (nums[i + 1] == 6 || nums[i + 1] == 7) {
+                    accumulator++;
+                }
+            }
+        }
+        return accumulator;
+    }
+
+//    END OF WARMUP FOR JANUARY 12, 2022. CODEBAT SERVERS WENT DOWN. WILL NEED TO CHECK ABOVE PROBLEM TO MAKE SURE IT RUNS
 }
