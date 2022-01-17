@@ -540,7 +540,7 @@ public class CodingBatPractice {
     public int array667(int[] nums) {
         int accumulator = 0;
 
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < (nums.length - 1); i++) {
             if (nums[i] == 6) {
                 if (nums[i + 1] == 6 || nums[i + 1] == 7) {
                     accumulator++;
@@ -550,5 +550,35 @@ public class CodingBatPractice {
         return accumulator;
     }
 
-//    END OF WARMUP FOR JANUARY 12, 2022. CODEBAT SERVERS WENT DOWN. WILL NEED TO CHECK ABOVE PROBLEM TO MAKE SURE IT RUNS
+//    Given an array of ints, we'll say that a triple is a value appearing 3 times in a row in the array. Return true if the array does not contain any triples.
+
+    public boolean noTriples(int[] nums) {
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (nums[i] == nums[i + 1]) {
+                if (nums[i+ 1] == nums[i + 2]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+//    Given an array of ints, return true if it contains a 2, 7, 1 pattern: a value, followed by the value plus 5, followed by the value minus 1. Additionally the 271 counts even if the "1" differs by 2 or less from the correct value.
+
+    public boolean has271(int[] nums) {
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (nums[i + 1] == (nums[i] + 5) && Math.abs(nums[i+2] - (nums[i] - 1)) <= 2) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+//    We want to make a row of bricks that is goal inches long. We have a number of small bricks (1 inch each) and big bricks (5 inches each). Return true if it is possible to make the goal by choosing from the given bricks. This is a little harder than it looks and can be done without any loops.
+
+//    public boolean makeBricks(int small, int big, int goal) {
+//
+//    }
+
 }
