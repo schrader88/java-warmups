@@ -577,8 +577,40 @@ public class CodingBatPractice {
 
 //    We want to make a row of bricks that is goal inches long. We have a number of small bricks (1 inch each) and big bricks (5 inches each). Return true if it is possible to make the goal by choosing from the given bricks. This is a little harder than it looks and can be done without any loops.
 
-//    public boolean makeBricks(int small, int big, int goal) {
+//    Notes: Need to fix edge case: makeBricks(3, 2, 9)
+
+    public boolean makeBricks(int small, int big, int goal) {
+        int newBig = big * 5;
+
+        if (small + newBig >= goal) {
+            if (((goal - small) % 5) == 0) {
+                return true;
+            } else if (Math.abs(newBig - goal) < small) {
+                return true;
+            }
+        } else {
+            return false;
+        }
+        return false;
+    }
+
+
+//    Given 3 int values, a b c, return their sum. However, if one of the values is the same as another of the values, it does not count towards the sum.
+
+//    IN PROGRESS  //
+
+//    public int loneSum(int a, int b, int c) {
+//        int[] nums = new int[] {a, b, c};
+//        int accumulator = 0;
 //
+//        for (int i = 0; i <= nums.length - 1; i++) {
+//            if (nums[i] == a || nums[i] == b || nums[i] == c) {
+//                accumulator += 0;
+//            } else {
+//                accumulator += nums[i];
+//            }
+//        }
+//        return accumulator;
 //    }
 
 }
