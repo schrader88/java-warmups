@@ -599,18 +599,64 @@ public class CodingBatPractice {
 
 //    IN PROGRESS  //
 
-//    public int loneSum(int a, int b, int c) {
-//        int[] nums = new int[] {a, b, c};
-//        int accumulator = 0;
-//
-//        for (int i = 0; i <= nums.length - 1; i++) {
-//            if (nums[i] == a || nums[i] == b || nums[i] == c) {
-//                accumulator += 0;
-//            } else {
-//                accumulator += nums[i];
-//            }
-//        }
-//        return accumulator;
-//    }
+    public int loneSum(int a, int b, int c) {
+        int accumulator = 0;
 
+        if (a != b && a != c) {
+            accumulator += a;
+        } else if (b != a && b != c) {
+            accumulator += b;
+        } else if (c != a && c != b) {
+            accumulator += c;
+        }
+
+        return accumulator;
+    }
+
+
+//    Given 3 int values, a b c, return their sum. However, if one of the values is 13 then it does not count towards the sum and values to its right do not count. So for example, if b is 13, then both b and c do not count.
+
+    public int luckySum(int a, int b, int c) {
+        int[] arrayOfNums = new int[]{a, b, c};
+        int accumulator = 0;
+
+        for (int num : arrayOfNums) {
+            if (num != 13) {
+                accumulator += num;
+            } else {
+                break;
+            }
+        }
+        return accumulator;
+    }
+
+//    Given 3 int values, a b c, return their sum. However, if any of the values is a teen -- in the range 13..19 inclusive -- then that value counts as 0, except 15 and 16 do not count as a teens. Write a separate helper "public int fixTeen(int n) {"that takes in an int value and returns that value fixed for the teen rule. In this way, you avoid repeating the teen code 3 times (i.e. "decomposition"). Define the helper below and at the same indent level as the main noTeenSum().
+
+    public int noTeenSum(int a, int b, int c) {
+        int[] nums = new int[]{a, b, c};
+        int accumulator = 0;
+
+        for (int num : nums) {
+            accumulator += fixTeen(num);
+        }
+
+        return accumulator;
+    }
+
+    public int fixTeen(int n) {
+        if (n >= 13 && n <= 19) {
+            if (n != 15 && n != 16) {
+                n = 0;
+            }
+            return n;
+        }
+        return n;
+    }
+
+
+//    For this problem, we'll round an int value up to the next multiple of 10 if its rightmost digit is 5 or more, so 15 rounds up to 20. Alternately, round down to the previous multiple of 10 if its rightmost digit is less than 5, so 12 rounds down to 10. Given 3 ints, a b c, return the sum of their rounded values. To avoid code repetition, write a separate helper "public int round10(int num) {" and call it 3 times. Write the helper entirely below and at the same indent level as roundSum().
+
+//    public int roundSum(int a, int b, int c) {
+//
+//    }
 }
