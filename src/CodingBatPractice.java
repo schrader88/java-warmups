@@ -670,7 +670,42 @@ public class CodingBatPractice {
 
 //    Given three ints, a b c, return true if one of b or c is "close" (differing from a by at most 1), while the other is "far", differing from both other values by 2 or more. Note: Math.abs(num) computes the absolute value of a number.
 
-//    public boolean closeFar(int a, int b, int c) {
+    public boolean closeFar(int a, int b, int c) {
+        if (Math.abs(a - b) <= 1 && (Math.abs(a - c) >= 2 && Math.abs(b - c) >= 2)) {
+            return true;
+        } else if (Math.abs(a - c) <= 1 && (Math.abs(a - b) >= 2 && Math.abs(b - c) >= 2)) {
+            return true;
+        }
+        return false;
+    }
+
+
+//    Given 2 int values greater than 0, return whichever value is nearest to 21 without going over. Return 0 if they both go over.
+
+//    Unknown edge cases fail. Want to rewrite stronger code here.
+
+    public int blackjack(int a, int b) {
+        if ((Math.abs(a - 21) < Math.abs(b - 21))) {
+            if (a <= 21) {
+                return a;
+            } else if (b <= 21) {
+                return b;
+            }
+        } else if ((Math.abs(b - 21) < Math.abs(a - 21))) {
+            if (b <= 21) {
+                return b;
+            } else if (a <= 21) {
+                return a;
+            }
+        }
+
+        return 0;
+    }
+
+
+//    Given three ints, a b c, one of them is small, one is medium and one is large. Return true if the three values are evenly spaced, so the difference between small and medium is the same as the difference between medium and large.
+
+//    public boolean evenlySpaced(int a, int b, int c) {
 //
 //    }
 
