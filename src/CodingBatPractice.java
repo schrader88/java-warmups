@@ -703,9 +703,50 @@ public class CodingBatPractice {
     }
 
 
-//    Given three ints, a b c, one of them is small, one is medium and one is large. Return true if the three values are evenly spaced, so the difference between small and medium is the same as the difference between medium and large.
+//    We want make a package of goal kilos of chocolate. We have small bars (1 kilo each) and big bars (5 kilos each). Return the number of small bars to use, assuming we always use big bars before small bars. Return -1 if it can't be done.
 
-//    public boolean evenlySpaced(int a, int b, int c) {
+    public int makeChocolate(int small, int big, int goal) {
+        int valueOfBig = big * 5;
+
+        if (goal < 10 && goal >= 5) {
+            valueOfBig = 5;
+        } else if (goal < 5) {
+            valueOfBig = 0;
+        }
+
+        int goalMinusBig = goal - valueOfBig;
+
+        if (small >= goalMinusBig) {
+            return goalMinusBig;
+        } else {
+            return -1;
+        }
+    }
+
+
+//    Given n of 1 or more, return the factorial of n, which is n * (n-1) * (n-2) ... 1. Compute the result recursively (without loops).
+
+    public int factorial(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+
+
+//    We have a number of bunnies and each bunny has two big floppy ears. We want to compute the total number of ears across all the bunnies recursively (without loops or multiplication).
+
+    public int bunnyEars(int bunnies) {
+        if (bunnies == 0) {
+            return 0;
+        }
+        return 2 + bunnyEars(bunnies - 1);
+    }
+
+
+//    The fibonacci sequence is a famous bit of mathematics, and it happens to have a recursive definition. The first two values in the sequence are 0 and 1 (essentially 2 base cases). Each subsequent value is the sum of the previous two values, so the whole sequence is: 0, 1, 1, 2, 3, 5, 8, 13, 21 and so on. Define a recursive fibonacci(n) method that returns the nth fibonacci number, with n=0 representing the start of the sequence.
+
+//    public int fibonacci(int n) {
 //
 //    }
 
