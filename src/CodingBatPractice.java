@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class CodingBatPractice {
     public static void main(String[] args) {
@@ -783,8 +784,132 @@ public class CodingBatPractice {
 
 //    Given a non-negative int n, return the sum of its digits recursively (no loops). Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
 
+//    WORK IN PROGRESS
+
 //    public int sumDigits(int n) {
 //
 //    }
+
+
+//    Given a list of integers, return a list where each integer is multiplied by 2.
+
+    public List<Integer> doubling(List<Integer> nums) {
+        List<Integer> newNums = new ArrayList<>();
+
+        for (int num : nums) {
+            num *= 2;
+            newNums.add(num);
+        }
+        return newNums;
+    }
+
+
+//    Given a list of integers, return a list where each integer is multiplied with itself.
+
+    public List<Integer> square(List<Integer> nums) {
+        List<Integer> newNums = new ArrayList<>();
+
+        for (int num : nums) {
+            num *= num;
+            newNums.add(num);
+        }
+        return newNums;
+    }
+
+
+//    Given a list of strings, return a list where each string has "*" added at its end.
+
+    public List<String> addStar(List<String> strings) {
+        List<String> newStrings = new ArrayList<>();
+
+        for (String string : strings) {
+            string = string + "*";
+            newStrings.add(string);
+        }
+        return newStrings;
+    }
+
+
+//    Given a list of strings, return a list where each string is replaced by 3 copies of the string concatenated together.
+
+    public List<String> copies3(List<String> strings) {
+        List<String> newStrings = new ArrayList<>();
+
+        for (String string : strings) {
+            string = string + string + string;
+            newStrings.add(string);
+        }
+        return newStrings;
+    }
+
+//    Given a list of strings, return a list where each string has "y" added at its start and end.
+
+    public List<String> moreY(List<String> strings) {
+        List<String> newStrings = new ArrayList<>();
+
+        for (String string : strings) {
+            string = "y" + string + "y";
+            newStrings.add(string);
+        }
+        return newStrings;
+    }
+
+
+//    Given a list of integers, return a list where each integer is added to 1 and the result is multiplied by 10.
+
+    public List<Integer> math1(List<Integer> nums) {
+        List<Integer> newNums = new ArrayList<>();
+
+        for (Integer num : nums) {
+            num += 1;
+            num *= 10;
+            newNums.add(num);
+        }
+        return newNums;
+    }
+
+
+//    Given a list of non-negative integers, return an integer list of the rightmost digits. (Note: use %)
+
+    public List<Integer> rightDigit(List<Integer> nums) {
+        List<Integer> newNums = new ArrayList<>();
+
+        for (Integer num : nums) {
+            num = num % 10;
+            newNums.add(num);
+        }
+        return newNums;
+    }
+
+
+//    Given a list of strings, return a list where each string is converted to lower case (Note: String toLowerCase() method).
+
+    public List<String> lower(List<String> strings) {
+        List<String> newStrings = new ArrayList<>();
+
+        for (String string : strings) {
+            newStrings.add(string.toLowerCase());
+        }
+
+        return newStrings;
+    }
+
+
+//    Given a list of strings, return a list where each string has all its "x" removed.
+//
+//    public List<String> noX(List<String> strings) {
+//        List<String> newStrings = new ArrayList<>();
+//
+//        for (String string : strings) {
+//            char[] chars = string.toCharArray();
+//
+//            for (char character : chars) {
+//                if (character != 'x') {
+//
+//                }
+//            }
+//        }
+//    }
+
 
 }
