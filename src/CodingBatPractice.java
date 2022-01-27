@@ -896,20 +896,49 @@ public class CodingBatPractice {
 
 
 //    Given a list of strings, return a list where each string has all its "x" removed.
-//
-//    public List<String> noX(List<String> strings) {
-//        List<String> newStrings = new ArrayList<>();
-//
-//        for (String string : strings) {
-//            char[] chars = string.toCharArray();
-//
-//            for (char character : chars) {
-//                if (character != 'x') {
-//
-//                }
-//            }
-//        }
-//    }
 
+    public List<String> noX(List<String> strings) {
+        List<String> newStrings = new ArrayList<>();
+
+        for (String string : strings) {
+            newStrings.add(string.replaceAll("x", ""));
+        }
+        return newStrings;
+    }
+
+
+//    Given a list of integers, return a list of the integers, omitting any that are less than 0.
+
+    public List<Integer> noNeg(List<Integer> nums) {
+        List<Integer> newNums = new ArrayList<>();
+
+        for (Integer num : nums) {
+            if (num > 0) {
+                newNums.add(num);
+            }
+        }
+        return newNums;
+    }
+
+
+//    Given a list of non-negative integers, return a list of those numbers except omitting any that end with 9. (Note: % by 10)
+
+    public List<Integer> no9(List<Integer> nums) {
+        List<Integer> newNums = new ArrayList<>();
+
+        for (Integer num : nums) {
+            if (num % 10 != 9) {
+                newNums.add(num);
+            }
+        }
+        return newNums;
+    }
+
+
+//    Given a list of integers, return a list of those numbers, omitting any that are between 13 and 19 inclusive.
+
+//    public List<Integer> noTeen(List<Integer> nums) {
+//
+//    }
 
 }
