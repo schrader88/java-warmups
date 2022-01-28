@@ -937,7 +937,63 @@ public class CodingBatPractice {
 
 //    Given a list of integers, return a list of those numbers, omitting any that are between 13 and 19 inclusive.
 
-//    public List<Integer> noTeen(List<Integer> nums) {
+    public List<Integer> noTeen(List<Integer> nums) {
+        List<Integer> newNums = new ArrayList<>();
+
+        for (Integer num : nums) {
+            if (num < 13 || num > 19) {
+                newNums.add(num);
+            }
+        }
+        return newNums;
+    }
+
+
+//    Given a list of strings, return a list of the strings, omitting any string that contains a "z". (Note: the str.contains(x) method returns a boolean)
+
+    public List<String> noZ(List<String> strings) {
+        List<String> newStrings = new ArrayList<>();
+
+        for (String string : strings) {
+            if (!string.contains("z")) {
+                newStrings.add(string);
+            }
+        }
+        return newStrings;
+    }
+
+
+//    Given a list of strings, return a list of the strings, omitting any string length 4 or more.
+
+    public List<String> noLong(List<String> strings) {
+        List<String> newStrings = new ArrayList<>();
+
+        for (String string : strings) {
+            if (string.length() <= 3) {
+                newStrings.add(string);
+            }
+        }
+        return newStrings;
+    }
+
+
+//    Given a list of strings, return a list of the strings, omitting any string length 3 or 4.
+
+    public List<String> no34(List<String> strings) {
+        List<String> newStrings = new ArrayList<>();
+
+        for (String string : strings) {
+            if (string.length() < 3 || string.length() > 4) {
+                newStrings.add(string);
+            }
+        }
+        return newStrings;
+    }
+
+
+//    Given a list of strings, return a list where each string has "y" added at its end, omitting any resulting strings that contain "yy" as a substring anywhere.
+
+//    public List<String> noYY(List<String> strings) {
 //
 //    }
 
