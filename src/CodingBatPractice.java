@@ -993,16 +993,52 @@ public class CodingBatPractice {
 
 //    Given a list of strings, return a list where each string has "y" added at its end, omitting any resulting strings that contain "yy" as a substring anywhere.
 
-//    public List<String> noYY(List<String> strings) {
+    public List<String> noYY(List<String> strings) {
+        List<String> newStrings = new ArrayList<>();
+        String stringWithY;
+
+        for (String string : strings) {
+            stringWithY = string + "y";
+            if (!stringWithY.contains("yy")) {
+                newStrings.add(stringWithY);
+            }
+        }
+        return newStrings;
+    }
+
+
+
+//    Given a string, return a string where for every char in the original, there are two chars.
+
+    public String doubleChar(String str) {
+        char[] characters = str.toCharArray();
+        String stringBuilder = "";
+
+        for (char character : characters) {
+            stringBuilder += character + "" + character;
+        }
+        return stringBuilder;
+    }
+
+//    Return the number of times that the string "hi" appears anywhere in the given string.
+
+    public int countHi(String str) {
+        char[] characters = str.toCharArray();
+        int accumulator = 0;
+
+        for (int i = 0; i < characters.length - 1; i++) {
+            if (characters[i] == 'h' && characters[i + 1] == 'i') {
+                accumulator++;
+            }
+        }
+        return accumulator;
+    }
+
+
+//    Return true if the string "cat" and "dog" appear the same number of times in the given string.
+
+//    public boolean catDog(String str) {
 //
 //    }
-
-
-//    Given a string, count the number of words ending in 'y' or 'z' -- so the 'y' in "heavy" and the 'z' in "fez" count, but not the 'y' in "yellow" (not case sensitive). We'll say that a y or z is at the end of a word if there is not an alphabetic letter immediately following it. (Note: Character.isLetter(char) tests if a char is an alphabetic letter.)
-
-//    public int countYZ(String str) {
-//
-//    }
-
 
 }
