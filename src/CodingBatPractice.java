@@ -1037,8 +1037,68 @@ public class CodingBatPractice {
 
 //    Return true if the string "cat" and "dog" appear the same number of times in the given string.
 
-//    public boolean catDog(String str) {
+    public boolean catDog(String str) {
+        int catAccumulator = 0;
+        int dogAccumulator = 0;
+        char[] characters = str.toCharArray();
+
+        for (int i = 0; i < characters.length - 2; i ++) {
+            if (characters[i] == 'c' && characters[i + 1] == 'a' && characters[i + 2] == 't') {
+                catAccumulator++;
+            } else if (characters[i] == 'd' && characters[i + 1] == 'o' && characters[i + 2] == 'g') {
+                dogAccumulator++;
+            }
+        }
+
+        return catAccumulator == dogAccumulator;
+    }
+
+
+//    Return the number of times that the string "code" appears anywhere in the given string, except we'll accept any letter for the 'd', so "cope" and "cooe" count.
+
+    public int countCode(String str) {
+        int accumulator = 0;
+        char[] characters = str.toCharArray();
+
+        for (int i = 0; i < characters.length - 3; i++) {
+            if (characters[i] == 'c' && characters[i + 1] == 'o' && characters[i + 3] == 'e') {
+                accumulator++;
+            }
+        }
+        return accumulator;
+    }
+
+
+//    Given two strings, return true if either of the strings appears at the very end of the other string, ignoring upper/lower case differences (in other words, the computation should not be "case sensitive"). Note: str.toLowerCase() returns the lowercase version of a string.
+
+    public boolean endOther(String a, String b) {
+        if (a.toLowerCase().endsWith(b.toLowerCase())) {
+            return true;
+        } else return b.toLowerCase().endsWith(a.toLowerCase());
+    }
+
+
+//    Return true if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.
+
+    public boolean xyzThere(String str) {
+        char[] characters = str.toCharArray();
+
+        for (int i = 0; i < characters.length - 2; i++) {
+            if(characters[i] == 'x' && characters[i + 1] == 'y' && characters[i + 2] == 'z') {
+                if (characters[i] == characters[0] || characters[i - 1] != '.') {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+//    Return true if the given string contains a "bob" string, but where the middle 'o' char can be any char.
+
+//    public boolean bobThere(String str) {
 //
 //    }
+
 
 }
