@@ -73,19 +73,20 @@ function shiftToLeft(num1, num2) {
 // FIND SOLUTION WITHOUT Math.max/Math.min
 
 function minMax(numArray) {
-    let largest = Math.max(...numArray);
-    let smallest = Math.min(...numArray);
-    // let largest = 0;
-    // let smallest = 0;
-    //
-    // for (let i = 0; i < numArray.length; i++) {
-    //    if (numArray[i] > numArray[i + 1]) {
-    //        largest = numArray[i];
-    //    } else if (numArray[i] < numArray[i + 1]) {
-    //        smallest = numArray[i];
-    //    }
-    // }
+    // let largest = Math.max(...numArray);
+    // let smallest = Math.min(...numArray);
+    let largest = numArray[0];
+    let smallest = numArray[0];
+
+    for (let i = 1; i < numArray.length; i++) {
+       if (numArray[i] > largest) {
+           largest = numArray[i];
+       }
+       if (numArray[i] < smallest) {
+           smallest = numArray[i];
+       }
+    }
     return [smallest, largest];
 }
 
-// console.log(minMax([5, 4, 3, 2, 1]));
+console.log(minMax([5, 4, 3, 2, 1]));
