@@ -1096,8 +1096,58 @@ public class CodingBatPractice {
 
 //    Return true if the given string contains a "bob" string, but where the middle 'o' char can be any char.
 
-//    public boolean bobThere(String str) {
+    public boolean bobThere(String str) {
+        char[] characters = str.toCharArray();
+
+        for (int i = 0; i < characters.length - 2; i++) {
+            if (characters[i] == 'b' && characters[i + 2] == 'b') {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+//    We'll say that a String is xy-balanced if for all the 'x' chars in the string, there exists a 'y' char somewhere later in the string. So "xxy" is balanced, but "xyx" is not. One 'y' can balance multiple 'x's. Return true if the given string is xy-balanced.
+
+    public boolean xyBalance(String str) {
+        char[] characters = str.toCharArray();
+        int xIndex = -1;
+        int yIndex = -1;
+
+        for (int i = 0; i < characters.length; i++) {
+            if (characters[i] == 'x') {
+                xIndex = i;
+            }
+            if (characters[i] == 'y') {
+                yIndex = i;
+            }
+        }
+
+        return xIndex < yIndex || xIndex == -1;
+    }
+
+
+//    Given two strings, a and b, create a bigger string made of the first char of a, the first char of b, the second char of a, the second char of b, and so on. Any leftover chars go at the end of the result.
+
+//    WORK IN PROGRESS //
+
+//    public String mixString(String a, String b) {
+//        char[] aChars = a.toCharArray();
+//        char[] bChars = b.toCharArray();
+//        String stringBuilder = "";
+//        int length = Math.max(aChars.length, bChars.length);
 //
+//        for (int i = 0; i < length; i++) {
+//            if (aChars.length >= i) {
+//                stringBuilder += aChars[i];
+//            }
+//            if (bChars.length >= i) {
+//                stringBuilder += bChars[i];
+//            }
+//        }
+//        return stringBuilder;
 //    }
 
 
