@@ -1131,24 +1131,70 @@ public class CodingBatPractice {
 
 //    Given two strings, a and b, create a bigger string made of the first char of a, the first char of b, the second char of a, the second char of b, and so on. Any leftover chars go at the end of the result.
 
-//    WORK IN PROGRESS //
+    public String mixString(String a, String b) {
+        char[] aChars = a.toCharArray();
+        char[] bChars = b.toCharArray();
+        String stringBuilder = "";
+        int length = Math.max(aChars.length, bChars.length);
 
-//    public String mixString(String a, String b) {
-//        char[] aChars = a.toCharArray();
-//        char[] bChars = b.toCharArray();
-//        String stringBuilder = "";
-//        int length = Math.max(aChars.length, bChars.length);
+        for (int i = 0; i < length; i++) {
+            if (aChars.length >= i) {
+                stringBuilder += aChars[i];
+            }
+            if (bChars.length >= i) {
+                stringBuilder += bChars[i];
+            }
+        }
+        return stringBuilder;
+    }
+
+
+//    Given a string and an int n, return a string made of n repetitions of the last n characters of the string. You may assume that n is between 0 and the length of the string, inclusive.
+
+    public String repeatEnd(String str, int n) {
+        String stringBuilder = "";
+
+        for (int i = 0; i < n; i++) {
+            stringBuilder += str.substring(str.length() - n);
+        }
+        return stringBuilder;
+    }
+
+
+//    Given a string and an int n, return a string made of the first n characters of the string, followed by the first n-1 characters of the string, and so on. You may assume that n is between 0 and the length of the string, inclusive (i.e. n >= 0 and n <= str.length()).
+
+    public String repeatFront(String str, int n) {
+        String stringBuilder = "";
+        int newN = n;
+
+        for (int i = 0; i < n; i++) {
+            stringBuilder += str.substring(0, newN);
+            newN -= 1;
+        }
+        return stringBuilder;
+    }
+
+
+//    Given two strings, word and a separator sep, return a big string made of count occurrences of the word, separated by the separator string.
+
+    public String repeatSeparator(String word, String sep, int count) {
+        String stringBuilder = "";
+
+        if (count != 0) {
+            stringBuilder += word;
+        }
+
+        for (int i = 0; i < count - 1; i++) {
+            stringBuilder += sep + word;
+        }
+        return stringBuilder;
+    }
+
+
+//    Given a string, consider the prefix string made of the first N chars of the string. Does that prefix string appear somewhere else in the string? Assume that the string is not empty and that N is in the range 1..str.length().
+
+//    public boolean prefixAgain(String str, int n) {
 //
-//        for (int i = 0; i < length; i++) {
-//            if (aChars.length >= i) {
-//                stringBuilder += aChars[i];
-//            }
-//            if (bChars.length >= i) {
-//                stringBuilder += bChars[i];
-//            }
-//        }
-//        return stringBuilder;
 //    }
-
 
 }
