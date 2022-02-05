@@ -1193,8 +1193,33 @@ public class CodingBatPractice {
 
 //    Given a string, consider the prefix string made of the first N chars of the string. Does that prefix string appear somewhere else in the string? Assume that the string is not empty and that N is in the range 1..str.length().
 
-//    public boolean prefixAgain(String str, int n) {
+    public boolean prefixAgain(String str, int n) {
+        String prefix = str.substring(0, n);
+        String end = str.substring(n);
+
+        return end.contains(prefix);
+    }
+
+
+//    A sandwich is two pieces of bread with something in between. Return the string that is between the first and last appearance of "bread" in the given string, or return the empty string "" if there are not two pieces of bread.
+
+    public String getSandwich(String str) {
+        int first = str.indexOf("bread");
+        int last = str.lastIndexOf("bread");
+
+        if ((last != -1) && (first != last)) {
+            return str.substring(first + 5, last);
+        } else {
+            return "";
+        }
+    }
+
+
+//    Returns true if for every '*' (star) in the string, if there are chars both immediately before and after the star, they are the same.
+
+//    public boolean sameStarChar(String str) {
 //
 //    }
+
 
 }
