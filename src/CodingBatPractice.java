@@ -101,7 +101,7 @@ public class CodingBatPractice {
         if (str.length() < 3) {
             firstThreeChars = "";
         } else {
-            firstThreeChars =  str.substring(0,3);
+            firstThreeChars = str.substring(0, 3);
         }
 
         if (firstThreeChars.equals("not")) {
@@ -172,7 +172,7 @@ public class CodingBatPractice {
         if (str.length() < 2) {
             return str + str + str;
         } else {
-            return str.substring(0,2) + str + str.substring(0,2);
+            return str.substring(0, 2) + str + str.substring(0, 2);
         }
     }
 
@@ -341,7 +341,7 @@ public class CodingBatPractice {
 
     public String endUp(String str) {
         if (str.length() >= 3) {
-            return  str.substring(0, str.length() - 3) + str.substring(str.length() - 3).toUpperCase();
+            return str.substring(0, str.length() - 3) + str.substring(str.length() - 3).toUpperCase();
         } else {
             return str.toUpperCase();
         }
@@ -375,9 +375,9 @@ public class CodingBatPractice {
     public String frontTimes(String str, int n) {
         if (str.length() <= 3) {
             String outputThreeOrLess = "";
-                for (int i = 0; i < n; i++) {
-                    outputThreeOrLess += str;
-                }
+            for (int i = 0; i < n; i++) {
+                outputThreeOrLess += str;
+            }
             return outputThreeOrLess;
         } else {
             String output = "";
@@ -393,8 +393,8 @@ public class CodingBatPractice {
 
     int countXX(String str) {
         int count = 0;
-        for (int i = 0; i < str.length()-1; i++) {
-            if (str.substring(i, i+2).equals("xx")) {
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.substring(i, i + 2).equals("xx")) {
                 count = count + 1;
             }
         }
@@ -437,7 +437,6 @@ public class CodingBatPractice {
     }
 
 
-
 //    Given an array of ints, return the number of 9's in the array.
 
     public int arrayCount9(int[] nums) {
@@ -474,7 +473,7 @@ public class CodingBatPractice {
 //    Given an array of ints, return true if the sequence of numbers 1, 2, 3 appears in the array somewhere.
 
     public boolean array123(int[] nums) {
-        for (int i = 0; i < nums.length-2; i++) {
+        for (int i = 0; i < nums.length - 2; i++) {
             if (nums[i] == 1 && nums[i + 1] == 2 && nums[i + 2] == 3) {
                 return true;
             }
@@ -556,7 +555,7 @@ public class CodingBatPractice {
     public boolean noTriples(int[] nums) {
         for (int i = 0; i < nums.length - 2; i++) {
             if (nums[i] == nums[i + 1]) {
-                if (nums[i+ 1] == nums[i + 2]) {
+                if (nums[i + 1] == nums[i + 2]) {
                     return false;
                 }
             }
@@ -569,7 +568,7 @@ public class CodingBatPractice {
 
     public boolean has271(int[] nums) {
         for (int i = 0; i < nums.length - 2; i++) {
-            if (nums[i + 1] == (nums[i] + 5) && Math.abs(nums[i+2] - (nums[i] - 1)) <= 2) {
+            if (nums[i + 1] == (nums[i] + 5) && Math.abs(nums[i + 2] - (nums[i] - 1)) <= 2) {
                 return true;
             }
         }
@@ -1007,7 +1006,6 @@ public class CodingBatPractice {
     }
 
 
-
 //    Given a string, return a string where for every char in the original, there are two chars.
 
     public String doubleChar(String str) {
@@ -1042,7 +1040,7 @@ public class CodingBatPractice {
         int dogAccumulator = 0;
         char[] characters = str.toCharArray();
 
-        for (int i = 0; i < characters.length - 2; i ++) {
+        for (int i = 0; i < characters.length - 2; i++) {
             if (characters[i] == 'c' && characters[i + 1] == 'a' && characters[i + 2] == 't') {
                 catAccumulator++;
             } else if (characters[i] == 'd' && characters[i + 1] == 'o' && characters[i + 2] == 'g') {
@@ -1084,7 +1082,7 @@ public class CodingBatPractice {
         char[] characters = str.toCharArray();
 
         for (int i = 0; i < characters.length - 2; i++) {
-            if(characters[i] == 'x' && characters[i + 1] == 'y' && characters[i + 2] == 'z') {
+            if (characters[i] == 'x' && characters[i + 1] == 'y' && characters[i + 2] == 'z') {
                 if (characters[i] == characters[0] || characters[i - 1] != '.') {
                     return true;
                 }
@@ -1106,7 +1104,6 @@ public class CodingBatPractice {
         }
         return false;
     }
-
 
 
 //    We'll say that a String is xy-balanced if for all the 'x' chars in the string, there exists a 'y' char somewhere later in the string. So "xxy" is balanced, but "xyx" is not. One 'y' can balance multiple 'x's. Return true if the given string is xy-balanced.
@@ -1217,9 +1214,54 @@ public class CodingBatPractice {
 
 //    Returns true if for every '*' (star) in the string, if there are chars both immediately before and after the star, they are the same.
 
-//    public boolean sameStarChar(String str) {
+    public boolean sameStarChar(String str) {
+        char[] characters = str.toCharArray();
+
+        for (int i = 1; i < characters.length - 1; i++) {
+            if (characters[i] == '*' && characters[i - 1] != characters[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+//    Given a string, compute a new string by moving the first char to come after the next two chars, so "abc" yields "bca". Repeat this process for each subsequent group of 3 chars, so "abcdef" yields "bcaefd". Ignore any group of fewer than 3 chars at the end.
+
+    public String oneTwo(String str) {
+        String stringBuilder = "";
+
+        for (int i = 0; i < str.length(); i += 3) {
+            stringBuilder = stringBuilder + str.substring(i + 1, i + 3) + str.charAt(i);
+        }
+        return stringBuilder;
+    }
+
+
+//    Look for patterns like "zip" and "zap" in the string -- length-3, starting with 'z' and ending with 'p'. Return a string where for all such words, the middle letter is gone, so "zipXzap" yields "zpXzp".
+
+    public String zipZap(String str) {
+        String stringBuilder = "";
+
+        if (str.length() <= 2) {
+            return str;
+        }
+
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'z' && str.charAt(i + 2) == 'p') {
+                stringBuilder += "zp";
+                i += 2;
+            } else {
+                stringBuilder += str.charAt(i);
+            }
+        }
+        return  stringBuilder;
+    }
+
+
+//    Return a version of the given string, where for every star (*) in the string the star and the chars immediately to its left and right are gone. So "ab*cd" yields "ad" and "ab**cd" also yields "ad".
+
+//    public String starOut(String str) {
 //
 //    }
-
-
 }
