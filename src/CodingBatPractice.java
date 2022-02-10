@@ -1349,8 +1349,70 @@ public class CodingBatPractice {
 
 //    Given an array of strings, return a new List (e.g. an ArrayList) where all the strings of the given length are omitted. See wordsWithout() below which is more difficult because it uses arrays.
 
-//    public List wordsWithoutList(String[] words, int len) {
+    public List wordsWithoutList(String[] words, int len) {
+        List<String> newStrings = new ArrayList<>();
+
+        for (String word : words) {
+            if (word.length() != len) {
+                newStrings.add(word);
+            }
+        }
+        return newStrings;
+    }
+
+
+//    Given a positive int n, return true if it contains a 1 digit. Note: use % to get the rightmost digit, and / to discard the rightmost digit.
+
+    public boolean hasOne(int n) {
+        while (n != 0) {
+            if (n % 10 == 1) {
+                return true;
+            }
+
+            n /= 10;
+        }
+        return false;
+    }
+
+//    We'll say that a positive int divides itself if every digit in the number divides into the number evenly. So for example 128 divides itself since 1, 2, and 8 all divide into 128 evenly. We'll say that 0 does not divide into anything evenly, so no number with a 0 digit divides itself. Note: use % to get the rightmost digit, and / to discard the rightmost digit.
+
+    public boolean dividesSelf(int n) {
+        int valueOfN = n;
+
+        while (n != 0) {
+            int digit = n % 10;
+
+            if (digit == 0 || valueOfN % digit != 0) {
+                return false;
+            }
+
+            n /= 10;
+        }
+        return true;
+    }
+
+
+//    Given an array of positive ints, return a new array of length "count" containing the first even numbers from the original array. The original array will contain at least "count" even numbers.
+
+    public int[] copyEvens(int[] nums, int count) {
+        int[] newNums = new int[count];
+        int index = 0;
+
+        for (int i = 0; index < count; i++) {
+            if (nums[i] % 2 == 0) {
+                newNums[index] = nums[i];
+                index++;
+            }
+        }
+        return newNums;
+    }
+
+
+//    We'll say that a positive int n is "endy" if it is in the range 0..10 or 90..100 (inclusive). Given an array of positive ints, return a new array of length "count" containing the first endy numbers from the original array. Decompose out a separate isEndy(int n) method to test if a number is endy. The original array will contain at least "count" endy numbers.
+
+//    public int[] copyEndy(int[] nums, int count) {
 //
 //    }
 
-    }
+
+}
