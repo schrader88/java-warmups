@@ -1410,9 +1410,65 @@ public class CodingBatPractice {
 
 //    We'll say that a positive int n is "endy" if it is in the range 0..10 or 90..100 (inclusive). Given an array of positive ints, return a new array of length "count" containing the first endy numbers from the original array. Decompose out a separate isEndy(int n) method to test if a number is endy. The original array will contain at least "count" endy numbers.
 
-//    public int[] copyEndy(int[] nums, int count) {
+    public int[] copyEndy(int[] nums, int count) {
+        int[] newNums = new int[count];
+        int index = 0;
+
+        for (int i = 0; index < count; i++) {
+            if (isEndy(nums[i])) {
+                newNums[index] = nums[i];
+                index++;
+            }
+        }
+        return newNums;
+    }
+
+    public boolean isEndy(int n) {
+        return (n >= 0 && n <= 10) || (n >= 90 && n <= 100);
+    }
+
+
+//    Given 2 arrays that are the same length containing strings, compare the 1st string in one array to the 1st string in the other array, the 2nd to the 2nd and so on. Count the number of times that the 2 strings are non-empty and start with the same char. The strings may be any length, including 0.
+
+    public int matchUp(String[] a, String[] b) {
+        int accumulator = 0;
+
+        for (int i = 0; i < a.length; i++) {
+
+            if (a[i].length() > 0 && b[i].length() > 0) {
+                if (a[i].charAt(0) == b[i].charAt(0)) {
+                    accumulator++;
+                }
+            }
+        }
+        return accumulator;
+    }
+
+
+//    The "key" array is an array containing the correct answers to an exam, like {"a", "a", "b", "b"}. the "answers" array contains a student's answers, with "?" representing a question left blank. The two arrays are not empty and are the same length. Return the score for this array of answers, giving +4 for each correct answer, -1 for each incorrect answer, and +0 for each blank answer.
+
+    public int scoreUp(String[] key, String[] answers) {
+        int accumulator = 0;
+
+        for (int i = 0; i < key.length; i++) {
+            if (!answers[i].equals("?")) {
+                if (key[i].equals(answers[i])) {
+                    accumulator += 4;
+                } else {
+                    accumulator -= 1;
+                }
+            }
+        }
+        return accumulator;
+    }
+
+
+//    Given an array of strings, return a new array without the strings that are equal to the target string. One approach is to count the occurrences of the target string, make a new array of the correct length, and then copy over the correct strings.
+
+//    public String[] wordsWithout(String[] words, String target) {
 //
 //    }
+
 
 
 }
