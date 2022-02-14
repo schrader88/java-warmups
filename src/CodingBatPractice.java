@@ -1465,7 +1465,31 @@ public class CodingBatPractice {
 
 //    Given an array of strings, return a new array without the strings that are equal to the target string. One approach is to count the occurrences of the target string, make a new array of the correct length, and then copy over the correct strings.
 
-//    public String[] wordsWithout(String[] words, String target) {
+    public String[] wordsWithout(String[] words, String target) {
+        int accumulator = 0;
+        int index = 0;
+
+        for (String word : words) {
+            if (!word.equals(target)) {
+                accumulator++;
+            }
+        }
+
+        String[] newStrings = new String[accumulator];
+
+        for (String word : words) {
+            if (!word.equals(target)) {
+                newStrings[index] = word;
+                index++;
+            }
+        }
+        return newStrings;
+    }
+
+
+//    Given two arrays, A and B, of non-negative int scores. A "special" score is one which is a multiple of 10, such as 40 or 90. Return the sum of largest special score in A and the largest special score in B. To practice decomposition, write a separate helper method which finds the largest special score in an array. Write your helper method after your scoresSpecial() method in the JavaBat text area.
+
+//    public int scoresSpecial(int[] a, int[] b) {
 //
 //    }
 
