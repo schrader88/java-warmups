@@ -1489,7 +1489,53 @@ public class CodingBatPractice {
 
 //    Given two arrays, A and B, of non-negative int scores. A "special" score is one which is a multiple of 10, such as 40 or 90. Return the sum of largest special score in A and the largest special score in B. To practice decomposition, write a separate helper method which finds the largest special score in an array. Write your helper method after your scoresSpecial() method in the JavaBat text area.
 
-//    public int scoresSpecial(int[] a, int[] b) {
+    public int scoresSpecial(int[] a, int[] b) {
+        return highestScore(a) + highestScore(b);
+    }
+
+    public int highestScore(int[] scores) {
+        int highest = 0;
+
+        for (int i = 0; i < scores.length; i++) {
+            if (scores[i] % 10 == 0 && scores[i] > highest) {
+                highest = scores[i];
+            }
+        }
+        return highest;
+    }
+
+
+//    We have an array of heights, representing the altitude along a walking trail. Given start/end indexes into the array, return the sum of the changes for a walk beginning at the start index and ending at the end index. For example, with the heights {5, 3, 6, 7, 2} and start=2, end=4 yields a sum of 1 + 5 = 6. The start end end index will both be valid indexes into the array with start <= end.
+
+    public int sumHeights(int[] heights, int start, int end) {
+        int changes = 0;
+
+        for (int i = start; i < end; i++) {
+            changes += Math.abs(heights[i] - heights[i + 1]);
+        }
+        return changes;
+    }
+
+
+//(A variation on the sumHeights problem.) We have an array of heights, representing the altitude along a walking trail. Given start/end indexes into the array, return the sum of the changes for a walk beginning at the start index and ending at the end index, however increases in height count double. For example, with the heights {5, 3, 6, 7, 2} and start=2, end=4 yields a sum of 1*2 + 5 = 7. The start end end index will both be valid indexes into the array with start <= end.
+
+    public int sumHeights2(int[] heights, int start, int end) {
+        int changes = 0;
+
+        for (int i = start; i < end; i++) {
+            if (heights[i] > heights[i + 1]) {
+                changes += Math.abs(heights[i] - heights[i + 1]);
+            } else {
+                changes += (Math.abs(heights[i] - heights[i + 1])) * 2;
+            }
+        }
+        return changes;
+    }
+
+
+//(A variation on the sumHeights problem.) We have an array of heights, representing the altitude along a walking trail. Given start/end indexes into the array, return the number of "big" steps for a walk starting at the start index and ending at the end index. We'll say that step is big if it is 5 or more up or down. The start end end index will both be valid indexes into the array with start <= end.
+
+//    public int bigHeights(int[] heights, int start, int end) {
 //
 //    }
 
