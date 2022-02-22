@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CodingBatPractice {
@@ -1565,7 +1566,31 @@ public class CodingBatPractice {
 
 //    Start with two arrays of strings, A and B, each with its elements in alphabetical order and without duplicates. Return a new array containing the first N elements from the two arrays. The result array should be in alphabetical order and without duplicates. A and B will both have a length which is N or more. The best "linear" solution makes a single pass over A and B, taking advantage of the fact that they are in alphabetical order, copying elements directly to the new array.
 
-//    public String[] mergeTwo(String[] a, String[] b, int n) {
+    public String[] mergeTwo(String[] a, String[] b, int n) {
+        String[] newStrings = new String[n];
+        int aIndex = 0;
+        int bIndex = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (a[aIndex].compareTo(b[bIndex]) < 0) {
+                newStrings[i] = a[aIndex];
+                aIndex++;
+            } else if (a[aIndex].compareTo(b[bIndex]) > 0) {
+                newStrings[i] = b[bIndex];
+                bIndex++;
+            } else {
+                newStrings[i] = a[aIndex];
+                aIndex++;
+                bIndex++;
+            }
+        }
+        return newStrings;
+    }
+
+
+//    Start with two arrays of strings, a and b, each in alphabetical order, possibly with duplicates. Return the count of the number of strings which appear in both arrays. The best "linear" solution makes a single pass over both arrays, taking advantage of the fact that they are in alphabetical order.
+
+//    public int commonTwo(String[] a, String[] b) {
 //
 //    }
 
