@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class CodingBatPractice {
     public static void main(String[] args) {
@@ -1590,7 +1591,24 @@ public class CodingBatPractice {
 
 //    Start with two arrays of strings, a and b, each in alphabetical order, possibly with duplicates. Return the count of the number of strings which appear in both arrays. The best "linear" solution makes a single pass over both arrays, taking advantage of the fact that they are in alphabetical order.
 
-//    public int commonTwo(String[] a, String[] b) {
+    public int commonTwo(String[] a, String[] b) {
+        int accumulator = 0;
+        String string = "";
+        for (int i = 0; i < b.length; i++) {
+            for (int ii = 0; ii < a.length; ii++) {
+                if (!string.contains(a[ii]) && a[ii].equals(b[i])) {
+                    string += a[ii];
+                    accumulator++;
+                }
+            }
+        }
+        return accumulator;
+    }
+
+
+//    Modify and return the given map as follows: if the key "a" has a value, set the key "b" to have that value, and set the key "a" to have the value "". Basically "b" is a bully, taking the value and replacing it with the empty string.
+
+//    public Map<String, String> mapBully(Map<String, String> map) {
 //
 //    }
 
